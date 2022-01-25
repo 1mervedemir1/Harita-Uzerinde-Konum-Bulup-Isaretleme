@@ -1,0 +1,32 @@
+﻿<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="utf-8">
+</head>
+<body>
+    <table id="tablo"></table>
+    <script src="~/Scripts/jquery-3.2.1.min.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            mahalle();
+	});
+function Mahalleler() {
+	$.ajax({
+		type: 'GET',
+		url: '/mahalle/Veriler',    
+		dataType: "JSON",
+        	success: function (data) {
+            		$('#tablo').html("");
+			$(data.Result).each(function (item) {
+                var mahalle = '<tr><td>' + data.Result[item].mahalle_adi + '</td><td>' + data.Result[item].koordinatlar + '</td></tr>';
+                $('#tablo').append(mahalle);
+            		}
+        	}
+    	});
+}
+    </script>
+
+</body>
+</html>
+</body>
+</html>

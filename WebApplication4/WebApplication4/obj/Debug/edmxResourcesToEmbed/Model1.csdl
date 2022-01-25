@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="staj_tabloModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="mahalle">
+    <Key>
+      <PropertyRef Name="mahalle_kodu" />
+    </Key>
+    <Property Name="mahalle_kodu" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="mahalle_adi" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="koordinatlar" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="mhlle">
+    <Key>
+      <PropertyRef Name="mahalle_kodu" />
+    </Key>
+    <Property Name="mahalle_kodu" Type="Int32" Nullable="false" />
+    <Property Name="mahalle_adı" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Name="koordinat" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+  </EntityType>
+  <EntityContainer Name="staj_tabloEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="mahalle" EntityType="Self.mahalle" />
+    <EntitySet Name="mhlle" EntityType="Self.mhlle" />
+  </EntityContainer>
+</Schema>

@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="webApplicationModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Mahalle">
+    <Key>
+      <PropertyRef Name="mahalle_kodu" />
+    </Key>
+    <Property Name="mahalle_kodu" Type="Int32" Nullable="false" />
+    <Property Name="mahalle_adi" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Name="koordinatlar" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+  </EntityType>
+  <EntityContainer Name="webApplicationEntities5" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Mahalle" EntityType="Self.Mahalle" />
+  </EntityContainer>
+</Schema>

@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="staj_tabloModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <!--Errors Found During Generation:
+warning 6013: The table/view 'staj_tablo.dbo.door' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
+        <EntityType Name="door">
+          <Property Name="kapı_no" Type="nchar" MaxLength="10" />
+          <Property Name="mahalle_kodu" Type="nchar" MaxLength="10" />
+          <Property Name="koordinat" Type="nchar" MaxLength="10" />
+        </EntityType>-->
+  <!--Errors Found During Generation:
+warning 6013: The table/view 'staj_tablo.dbo.kapı' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
+        <EntityType Name="kapı">
+          <Property Name="kapı no" Type="varchar" MaxLength="50" />
+          <Property Name="mahalle kodu" Type="nvarchar" MaxLength="50" />
+          <Property Name="koordinatlar" Type="varchar(max)" />
+        </EntityType>-->
+  <EntityType Name="mahalle">
+    <Key>
+      <PropertyRef Name="mahalle_kodu" />
+    </Key>
+    <Property Name="mahalle_kodu" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="mahalle_adi" Type="varchar" MaxLength="50" />
+    <Property Name="koordinatlar" Type="varchar(max)" />
+  </EntityType>
+  <EntityType Name="mhlle">
+    <Key>
+      <PropertyRef Name="mahalle_kodu" />
+    </Key>
+    <Property Name="mahalle_kodu" Type="int" Nullable="false" />
+    <Property Name="mahalle_adı" Type="nchar" MaxLength="10" />
+    <Property Name="koordinat" Type="nchar" MaxLength="10" />
+  </EntityType>
+  <EntityContainer Name="staj_tabloModelStoreContainer">
+    <EntitySet Name="mahalle" EntityType="Self.mahalle" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="mhlle" EntityType="Self.mhlle" Schema="dbo" store:Type="Tables" />
+  </EntityContainer>
+</Schema>

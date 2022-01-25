@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="webApplicationModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <!--Errors Found During Generation:
+warning 6013: The table/view 'webApplication.dbo.Kapi' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
+        <EntityType Name="Kapi">
+          <Property Name="kapi_no" Type="nchar" MaxLength="10" />
+          <Property Name="mahalle_kodu" Type="int" />
+          <Property Name="koordinatlar" Type="nchar" MaxLength="10" />
+        </EntityType>-->
+  <EntityType Name="Mahalle">
+    <Key>
+      <PropertyRef Name="mahalle_kodu" />
+    </Key>
+    <Property Name="mahalle_kodu" Type="int" Nullable="false" />
+    <Property Name="mahalle_adi" Type="nchar" MaxLength="10" />
+    <Property Name="koordinatlar" Type="nchar" MaxLength="10" />
+  </EntityType>
+  <EntityContainer Name="webApplicationModelStoreContainer">
+    <EntitySet Name="Mahalle" EntityType="Self.Mahalle" Schema="dbo" store:Type="Tables" />
+  </EntityContainer>
+</Schema>

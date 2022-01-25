@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="staj_tabloModelStoreContainer" CdmEntityContainer="staj_tabloEntities">
+    <EntitySetMapping Name="mahalle">
+      <EntityTypeMapping TypeName="staj_tabloModel.mahalle">
+        <MappingFragment StoreEntitySet="mahalle">
+          <ScalarProperty Name="mahalle_kodu" ColumnName="mahalle_kodu" />
+          <ScalarProperty Name="mahalle_adi" ColumnName="mahalle_adi" />
+          <ScalarProperty Name="koordinatlar" ColumnName="koordinatlar" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="mhlle">
+      <EntityTypeMapping TypeName="staj_tabloModel.mhlle">
+        <MappingFragment StoreEntitySet="mhlle">
+          <ScalarProperty Name="mahalle_kodu" ColumnName="mahalle_kodu" />
+          <ScalarProperty Name="mahalle_adı" ColumnName="mahalle_adı" />
+          <ScalarProperty Name="koordinat" ColumnName="koordinat" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

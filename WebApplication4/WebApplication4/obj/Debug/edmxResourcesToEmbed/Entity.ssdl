@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="webApplicationModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Kapi">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="KapiNo" Type="nchar" MaxLength="10" Nullable="false" />
+    <Property Name="MahalleKodu" Type="int" />
+    <Property Name="koordinatlar" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Mahalle">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="MahalleKodu" Type="int" Nullable="false" />
+    <Property Name="MahalleAdi" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Koordinatlar" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+  </EntityType>
+  <EntityContainer Name="webApplicationModelStoreContainer">
+    <EntitySet Name="Kapi" EntityType="Self.Kapi" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Mahalle" EntityType="Self.Mahalle" Schema="dbo" store:Type="Tables" />
+  </EntityContainer>
+</Schema>
